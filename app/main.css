@@ -1,5 +1,7 @@
 .container {
-    padding: 100px 200px;
+    position: relative;
+    padding-top: 100px;
+    padding-left: 200px;
 }
 
 .content {
@@ -8,7 +10,7 @@
     height: 350px;
 }
 
-.img-one {
+.img-three {
     width: 570px;
     height: 300px;
     position: absolute;
@@ -26,31 +28,43 @@
     left: 7px;
 }
 
-.img-three {
+.img-one {
     width: 600px;
     height: 300px;
     position: absolute;
     z-index: 2;
 }
 
-.animation--fade-out {
-    animation-name: fade-out;
-    animation-duration: 2s;
-}
-
-@keyframes fade-out {
-    from {
-        left: 0;
-        top: 0;
-    }
-    to {
-        left: 600px;
-        top: 350px;
-    }
-}
-
-.drop-area {
-    width: 30px;
+.drop-area-top {
+    position: absolute;
+    top: 70px;
+    width: 600px;
     height: 30px;
+    background-color: red;
+}
+
+.drop-area-right {
+    position: absolute;
+    left: 800px;
+    top: 100px;
+    width: 30px;
+    height: 350px;
+    background-color: red;
+}
+
+.drop-area-bottom {
+    position: absolute;
+    top: 450px;
+    width: 600px;
+    height: 30px;
+    background-color: red;
+}
+
+.drop-area-left {
+    position: absolute;
+    left: 170px;
+    top: 100px;
+    width: 30px;
+    height: 350px;
     background-color: red;
 }
