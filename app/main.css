@@ -32,3 +32,25 @@
     position: absolute;
     z-index: 2;
 }
+
+.animation--fade-out {
+    animation-name: fade-out;
+    animation-duration: 2s;
+}
+
+@keyframes fade-out {
+    from {
+        left: 0;
+        top: 0;
+    }
+    to {
+        left: 600px;
+        top: 350px;
+    }
+}
+
+.drop-area {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}

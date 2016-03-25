@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <title>Dedao app css</title>
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
@@ -7,8 +9,9 @@
     <div class="content">
         <img class="img-one" src="">
         <img class="img-two" src="./images/img1.jpeg">
-        <img class="img-three" src="./images/img2.jpeg">
+        <img id="img" class="img-three" draggable="true" ondragstart="drag(event)" src="./images/img2.jpeg">
     </div>
+    <div class="drop-area" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
 </div>
 </body>
 <script src="./app.js"></script>
