@@ -7,9 +7,9 @@ var img1Src = 0;
 var img2Src = 1;
 
 var img1 = document.getElementById('img1');
-img1.src = IMAGE_SRC[img1Src];
+img1.src = getImgSrc(img1Src);
 var img2 = document.getElementById('img2');
-img2.src = IMAGE_SRC[img2Src];
+img2.src = getImgSrc(img2Src);
 
 var allowDrop = function (ev) {
     ev.preventDefault();
@@ -28,16 +28,24 @@ var getAnimationClassByDirection = function (direction) {
     }
 };
 
+var updateSrc = function () {
+    img1Src ^= img2Src;
+    img2Src ^= img1Src;
+    img1Src ^= img2Src;
+};
+
+function getImgSrc(src) {
+    return IMAGE_SRC[src];
+};
+
 var drop = function (ev) {
     ev.preventDefault();
     var animationClass = getAnimationClassByDirection(ev.target.id);
     img1.classList.add('animated', animationClass);
     setTimeout(function () {
-        img1Src ^= img2Src;
-        img2Src ^= img1Src;
-        img1Src ^= img2Src;
-        img1.src = IMAGE_SRC[img1Src];
-        img2.src = IMAGE_SRC[img2Src];
+        updateSrc();
+        img1.src = getImgSrc(img1Src);
+        img2.src = getImgSrc(img2Src);
         img1.classList.remove('animated', animationClass);
     }, 500);
 };
