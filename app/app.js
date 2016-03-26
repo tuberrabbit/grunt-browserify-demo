@@ -1,6 +1,14 @@
 const IMAGE_SRC = [
     './images/img1.jpeg',
-    './images/img2.jpeg'
+    './images/img2.jpeg',
+    './images/img3.jpeg',
+    './images/img4.jpeg',
+    './images/img5.jpeg',
+    './images/img6.jpeg',
+    './images/img7.jpeg',
+    './images/img8.jpeg',
+    './images/img9.jpeg',
+    './images/img10.jpeg'
 ];
 
 var img1Src = 0;
@@ -29,9 +37,8 @@ var getAnimationClassByDirection = function (direction) {
 };
 
 var updateSrc = function () {
-    img1Src ^= img2Src;
-    img2Src ^= img1Src;
-    img1Src ^= img2Src;
+    img1Src = (img1Src + 1) % 10;
+    img2Src = (img1Src + 1) % 10;
 };
 
 function getImgSrc(src) {
