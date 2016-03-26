@@ -16,7 +16,8 @@
     position: absolute;
     bottom: 0;
     left: 15px;
-    background-color: gray;
+    opacity: 0.1;
+    background-color: #000001;
 }
 
 .img-two {

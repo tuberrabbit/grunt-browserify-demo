@@ -1,23 +1,11 @@
-const IMAGE_SRC = [
-    './images/img1.jpeg',
-    './images/img2.jpeg',
-    './images/img3.jpeg',
-    './images/img4.jpeg',
-    './images/img5.jpeg',
-    './images/img6.jpeg',
-    './images/img7.jpeg',
-    './images/img8.jpeg',
-    './images/img9.jpeg',
-    './images/img10.jpeg'
-];
-
-var img1Src = 0;
-var img2Src = 1;
+var idx = 0;
 
 var img1 = document.getElementById('img1');
-img1.src = getImgSrc(img1Src);
+img1.src = './images/img1.jpeg';
 var img2 = document.getElementById('img2');
-img2.src = getImgSrc(img2Src);
+img2.src = './images/img2.jpeg';
+var img3 = document.getElementById('img3');
+img3.src = 'http://lorempixel.com/600/300?0';
 
 var allowDrop = function (ev) {
     ev.preventDefault();
@@ -37,12 +25,9 @@ var getAnimationClassByDirection = function (direction) {
 };
 
 var updateSrc = function () {
-    img1Src = (img1Src + 1) % 10;
-    img2Src = (img1Src + 1) % 10;
-};
-
-function getImgSrc(src) {
-    return IMAGE_SRC[src];
+    img1.src = img2.src;
+    img2.src = img3.src;
+    img3.src = 'http://lorempixel.com/600/300?' + ++idx;
 };
 
 var drop = function (ev) {
@@ -51,8 +36,6 @@ var drop = function (ev) {
     img1.classList.add('animated', animationClass);
     setTimeout(function () {
         updateSrc();
-        img1.src = getImgSrc(img1Src);
-        img2.src = getImgSrc(img2Src);
         img1.classList.remove('animated', animationClass);
     }, 500);
 };
