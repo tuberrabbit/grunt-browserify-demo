@@ -1,0 +1,32 @@
+<form ng-submit="vm.submit(vm.form)" novalidate>
+    <div>
+        <label for="_email">邮箱</label>
+        <input type="email" id="_email" ng-model="vm.form.email" required bf-field-error>
+    </div>
+    <div>
+        <label for="_nickname">昵称</label>
+        <input type="text" id="_nickname" ng-model="vm.form.nickname">
+    </div>
+    <div>
+        <label for="_password">密码</label>
+        <input type="password" id="_password" ng-model="vm.form.password" required bf-field-error>
+    </div>
+    <div>
+        <label for="_retypedPassword">确认密码</label>
+        <input type="password" id="_retypedPassword" ng-model="vm.retypedPassword" required bf-field-error>
+    </div>
+    <div>
+        <label for="_captcha">图形验证码</label>
+        <input type="text" id="_captcha" ng-model="vm.captcha" required bf-field-error>
+        <img src="" alt="图形验证码">
+    </div>
+    <div>
+        <input type="checkbox" id="_accepted" ng-model="vm.accepted" required bf-field-error>
+        <label for="_accepted">我已阅读并同意
+            <a href="">用户服务协议</a>
+        </label>
+    </div>
+    <div>
+        <button type="submit">提交</button>
+    </div>
+</form>

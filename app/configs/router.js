@@ -1,31 +1,23 @@
 bf.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/state1');
+    $urlRouterProvider.otherwise('/404');
 
     $stateProvider
-        .state('home', {
+        .state('home',{
             url: '/',
-            templateUrl: './index.html'
+            templateUrl: './pages/home.html'
         })
-        .state('state1', {
-            url: '/state1',
-            views: {
-                'viewA': {
-                    template: 'state1.viewA'
-                },
-                'viewB': {
-                    template: 'state1.viewB'
-                }
-            }
+        .state('not found', {
+            url: '/404',
+            templateUrl: './pages/404.html'
         })
-        .state('state2', {
-            url: '/state2',
-            views: {
-                'viewA': {
-                    template: 'state2.viewA'
-                },
-                'viewB': {
-                    template: 'state2.viewB'
-                }
-            }
+        .state('reader', {
+            url: '/reader',
+            templateUrl: './pages/reader.html'
+        })
+        .state('reader.create', {
+            url: '/create',
+            templateUrl: './pages/reader-create.html',
+            controller: 'readerCreateController',
+            controllerAs: 'vm'
         });
 });
