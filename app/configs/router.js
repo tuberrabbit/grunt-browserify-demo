@@ -8,22 +8,24 @@ bf.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('state1', {
             url: '/state1',
-            templateUrl: './pages/state1.html',
-        })
-        .state('state1.list', {
-            url: '/state1/list',
-            templateUrl: './pages/state1.list.html',
-            controller: 'state1ListController',
-            controllerAs: 'vm'
+            views: {
+                'viewA': {
+                    template: 'state1.viewA'
+                },
+                'viewB': {
+                    template: 'state1.viewB'
+                }
+            }
         })
         .state('state2', {
             url: '/state2',
-            templateUrl: './pages/state2.html',
-        })
-        .state('state2.list', {
-            url: '/state2/list',
-            templateUrl: './pages/state2.list.html',
-            controller: 'state2ListController',
-            controllerAs: 'vm'
+            views: {
+                'viewA': {
+                    template: 'state2.viewA'
+                },
+                'viewB': {
+                    template: 'state2.viewB'
+                }
+            }
         });
 });
