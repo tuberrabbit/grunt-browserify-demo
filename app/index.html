@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bf">
 <head>
-    <title>Dedao app css</title>
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./animate.css">
+    <title>Book Forums</title>
 </head>
 <body>
-<div class="container">
-    <div class="content">
-        <img id="img3" class="img-three" draggable="false">
-        <img id="img2" class="img-two" draggable="false">
-        <img id="img1" class="img-one" draggable="true">
-    </div>
-    <div id="drop-area-top" class="drop-area-top" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="drop-area-right" class="drop-area-right" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="drop-area-bottom" class="drop-area-bottom" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="drop-area-left" class="drop-area-left" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-</div>
+<a ui-sref="state1">State 1</a>
+<a ui-sref="state2">State 2</a>
+<div ui-view></div>
+<script src="./libs/angular.min.js"></script>
+<script src="./libs/angular-ui-router.min.js"></script>
+
+<script src="./configs/app.js"></script>
+<script src="./configs/router.js"></script>
+
+<script src="./pages/state1.list.js"></script>
+<script src="./pages/state2.list.js"></script>
 </body>
-<script src="./app.js"></script>
 </html>
