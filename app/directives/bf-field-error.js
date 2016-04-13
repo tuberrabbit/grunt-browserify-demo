@@ -10,8 +10,9 @@ bf.directive('bfFieldError', function ($compile) {
             subScope.errors = function () {
                 return modelCtl.$error;
             };
+            subScope.customMsg = scope.$eval(attrs.bfFieldError);
             var hint = $compile('<ul ng-if="hasError()">' +
-                '<li ng-repeat="(name, wrong) in errors()" ng-if="wrong">{{name | error}}</li>' +
+                '<li ng-repeat="(name, wrong) in errors()" ng-if="wrong">{{name | error : customMsg}}</li>' +
                 '</ul>')(subScope);
             elm.after(hint);
         }

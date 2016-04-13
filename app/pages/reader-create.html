@@ -1,4 +1,4 @@
-<form ng-submit="vm.submit(vm.form)" novalidate>
+<form ng-submit="vm.submit(vm.form)" novalidate name="form">
     <div>
         <label for="_email">邮箱</label>
         <input type="email" id="_email" ng-model="vm.form.email" required bf-field-error>
@@ -9,11 +9,12 @@
     </div>
     <div>
         <label for="_password">密码</label>
-        <input type="password" id="_password" ng-model="vm.form.password" required bf-field-error>
+        <input type="password" id="_password" ng-model="vm.form.password" required bf-field-error name="password">
     </div>
     <div>
         <label for="_retypedPassword">确认密码</label>
-        <input type="password" id="_retypedPassword" ng-model="vm.retypedPassword" required bf-field-error>
+        <input type="password" id="_retypedPassword" ng-model="vm.retypedPassword" required
+               bf-field-error="{same: '确认密码必须与密码相同'}" bf-assert-same-as="vm.form.password">
     </div>
     <div>
         <label for="_captcha">图形验证码</label>
@@ -21,7 +22,8 @@
         <img src="" alt="图形验证码">
     </div>
     <div>
-        <input type="checkbox" id="_accepted" ng-model="vm.accepted" required bf-field-error>
+        <input type="checkbox" id="_accepted" ng-model="vm.accepted"
+               bf-field-error="{same: '请仔细阅读并同意用户服务协议'}" bf-assert-same-as="true">
         <label for="_accepted">我已阅读并同意
             <a href="">用户服务协议</a>
         </label>
