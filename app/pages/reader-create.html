@@ -9,7 +9,7 @@
     </div>
     <div>
         <label for="_password">密码</label>
-        <input type="password" id="_password" ng-model="vm.form.password" required bf-field-error name="password">
+        <input type="password" id="_password" ng-model="vm.form.password" required bf-field-error>
     </div>
     <div>
         <label for="_retypedPassword">确认密码</label>
@@ -29,6 +29,6 @@
         </label>
     </div>
     <div>
-        <button type="submit">提交</button>
+        <button type="submit" ng-disabled="form.$invalid">提交</button>
     </div>
 </form>
