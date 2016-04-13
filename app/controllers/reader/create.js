@@ -1,5 +1,6 @@
 bf.controller('ReaderCreateCtrl', function () {
-    this.submit = function () {
-        console.log(this.form);
+    var vm = this;
+    vm.submit = function () {
+        console.log(vm.form);
     };
 });
