@@ -18,7 +18,16 @@ bf.config(function ($stateProvider, $urlRouterProvider) {
         .state('reader.create', {
             url: '/create',
             templateUrl: './controllers/reader/create.html',
-            controller: 'readerCreateController',
-            controllerAs: 'vm'
+            controller: 'ReaderCreateCtrl as vm'
+        })
+        .state('thread', {
+            url: '/thread',
+            template: '<div ui-view></div>',
+            abstract: true
+        })
+        .state('thread.list', {
+            url: '/list',
+            templateUrl: 'controllers/thread/list.html',
+            controller: 'ThreadListCtrl as vm'
         });
 });

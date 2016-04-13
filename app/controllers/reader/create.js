@@ -1,5 +1,5 @@
-bf.controller('readerCreateController', function () {
-    this.submit = function (model) {
-        console.log(model);
+bf.controller('ReaderCreateCtrl', function () {
+    this.submit = function () {
+        console.log(this.form);
     };
 });
