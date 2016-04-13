@@ -4,19 +4,20 @@ bf.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home',{
             url: '/',
-            templateUrl: './pages/home.html'
+            templateUrl: './controllers/home.html'
         })
         .state('not found', {
             url: '/404',
-            templateUrl: './pages/404.html'
+            templateUrl: './controllers/404.html'
         })
         .state('reader', {
             url: '/reader',
-            templateUrl: './pages/reader.html'
+            template: '<div ui-view></div>',
+            abstract: true
         })
         .state('reader.create', {
             url: '/create',
-            templateUrl: './pages/reader-create.html',
+            templateUrl: './controllers/reader/create.html',
             controller: 'readerCreateController',
             controllerAs: 'vm'
         });
